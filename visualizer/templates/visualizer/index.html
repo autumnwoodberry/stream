@@ -1,0 +1,37 @@
+{% load staticfiles %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>stream</title>
+
+    <meta name="description" content="the best time of year">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'visualizer/css/main.css' %}">
+  </head>
+  <body ng-app="stream" ng-controller="streamController">
+
+    <!-- Header -->
+    <header class="Header"><i class="fa fa-globe"></i><span> STREAM</span><span class="version"> version 0.0.1 (a)</span></header>
+
+    <!-- Map -->
+    <leaflet class="Block Leaflet" stations="stations"></leaflet>
+
+    <!-- Javascripts -->
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+    <script src="{% static 'javascript/angular.js' %}"></script>
+    <script src="{% static 'javascript/angular-resource.js' %}"></script>
+
+    <script src="{% static 'visualizer/javascript/app.js' %}"></script>
+
+  </body>
+</html>
