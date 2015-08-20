@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-8">
+      <div class="panel panel-default">
+
+        <div ng-controller="StationsController as ctrl">
+          <leaflet class="Leaflet" stations="ctrl.stations"></leaflet>
+        </div>
+
+      </div>
+  </div>
+  <div class="col-md-4">
+
+    <div ui-view></div>
+
+  </div>
+</div>
