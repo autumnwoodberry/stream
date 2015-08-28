@@ -5,9 +5,6 @@ var app = angular.module('stream', [
 
 app.config(['$locationProvider', '$interpolateProvider', '$stateProvider', '$urlRouterProvider', function($locationProvider, $interpolateProvider, $stateProvider, $urlRouterProvider) {
 
-    $interpolateProvider.startSymbol('((');
-    $interpolateProvider.endSymbol('))');
-
     $locationProvider.html5Mode(true).hashPrefix('!');
 
     $urlRouterProvider.otherwise('/stations');
