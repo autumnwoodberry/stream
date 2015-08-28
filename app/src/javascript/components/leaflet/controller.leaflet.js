@@ -9,9 +9,8 @@ class LeafletController {
       // TODO move the lon/lat to directive
       this.map = L.map(div).setView([39, -105.5], 7);
       // TODO move map tiles URI to a constant
-      let layer = L.tileLayer('http://{s}.tiles.mapbox.com/v3/w00dberry.jhjcg5gl/{z}/{x}/{y}.png');
-      layer.addTo(this.map);
-      this.addStations();
+      let baseLayer = L.tileLayer('http://{s}.tiles.mapbox.com/v3/w00dberry.jhjcg5gl/{z}/{x}/{y}.png');
+      baseLayer.addTo(this.map);
     };
 
     addStations() {
