@@ -6,7 +6,13 @@ function leaflet() {
     },
     controller: 'leafletController as ctrl',
     link: function(scope, element, attrs, ctrl){
-      ctrl.init(element[0], scope);
+
+      ctrl.init(element[0]);
+
+      scope.$watch('ctrl.stations', (stations) => {
+        ctrl.updateStations();
+      }, true);
+
     }
   }
 };

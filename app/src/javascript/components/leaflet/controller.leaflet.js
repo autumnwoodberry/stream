@@ -14,22 +14,28 @@ class LeafletController {
     };
 
     addStations() {
-      // TODO add only stations that are not currently added to the map
-      // using underscore to modify the local stations variable here
-      this.stations.$promise.then((stations) => {
-        stations.forEach((station, index) => {
-          let marker = L.marker([station.latitude, station.longitude]);
-          marker.stationID = station.id;
-          marker.on('click', _.bind(this.markerClicked, this));
-          marker.addTo(this.map);
-        });
-      });
-    };
 
-    markerClicked(event) {
-      this.$state.go('stations.details', {
-        stationID: event.target.stationID
+      // TODO add all stations that aren't already on the map
+
+      this.stations.forEach((station, index) => {
+
+        let marker = L.marker([station.latitude, station.longitude], {
+          title: station.name
+        });
+
+        marker.stationID = station.id;
+
+        // make the marker a clickable "link" to the station's details page
+        marker.on('click', event => {
+          this.$state.go('stations.details', {
+            stationID: event.target.stationID
+          });
+        });
+
+        // add it to the map
+        marker.addTo(this.map);
       });
+
     }
 
     removeStations() {
