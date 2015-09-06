@@ -1,5 +1,6 @@
 var app = angular.module('stream', [
   'ngResource',
+  'ngAnimate',
   'ui.router',
 ]);
 
