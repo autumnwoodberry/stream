@@ -2,10 +2,10 @@ function leaflet() {
   return {
     scope: {},
     bindToController: {
-      stations: '='
+      stations: '=',
     },
     controller: 'leafletController as ctrl',
-    link: function(scope, element, attrs, ctrl){
+    link: (scope, element, attrs, ctrl) => {
 
       ctrl.init(element[0]);
 

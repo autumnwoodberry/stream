@@ -1,22 +1,22 @@
 var app = angular.module('stream', [
   'ngResource',
-  'ui.router'
+  'ui.router',
 ]);
 
-app.config(['$locationProvider', '$interpolateProvider', '$stateProvider', '$urlRouterProvider', function($locationProvider, $interpolateProvider, $stateProvider, $urlRouterProvider) {
+app.config(['$locationProvider', '$interpolateProvider', '$stateProvider', '$urlRouterProvider', ($locationProvider, $interpolateProvider, $stateProvider, $urlRouterProvider) => {
 
-    $locationProvider.html5Mode(true).hashPrefix('!');
+  $locationProvider.html5Mode(true).hashPrefix('!');
 
-    $urlRouterProvider.otherwise('/stations');
+  $urlRouterProvider.otherwise('/stations');
 
-    $stateProvider
-    .state('stations', {
-      url: '/stations',
-      templateUrl: '/partials/stations.html'
-    })
-    .state('stations.details', {
-      url:'/:stationID',
-      templateUrl: '/partials/station-details.html'
-    })
+  $stateProvider
+  .state('stations', {
+    url: '/stations',
+    templateUrl: '/partials/stations.html',
+  })
+  .state('stations.details', {
+    url:'/:stationID',
+    templateUrl: '/partials/station-details.html',
+  });
 
 }]);

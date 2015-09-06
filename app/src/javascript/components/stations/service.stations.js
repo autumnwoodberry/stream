@@ -1,4 +1,4 @@
-function StationsService($resource){
+function StationsService($resource) {
   return $resource('http://127.0.0.1:8000/api/stations/:stationID');
 }
 

@@ -1,11 +1,11 @@
 class StationsController {
 
-  constructor(StationsService){
+  constructor(StationsService) {
     this.stations = StationsService.query();
   }
 
 }
 
-StationsController['$inject'] = ['StationsService'];
+StationsController.$inject = ['StationsService'];
 
-angular.module('stream').controller('StationsController', StationsController)
+angular.module('stream').controller('StationsController', StationsController);
